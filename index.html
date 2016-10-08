@@ -1,0 +1,90 @@
+<!doctype html>
+<html ng-app="sapientApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" type="text/css" href="css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body ng-controller="SapientHubController">
+    <!--   Nav Bar    -->
+    <div class="container">
+        <div class="row" id="mainNav">
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="subHeader">
+                    One of the India's largest eCom Hub!
+                </div>
+                <div class="navbar-header myHeader">
+                    <a class="navbar-brand" href="javascript:void(0)">Sapient<span>Nitro<sup>SM</sup></span> Cart</a>
+                    <i class="material-icons" id="searchIcon">search</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Hidden pop search bar -->
+    <div class="container" id="searchBar">
+        <div class="row">
+            <div class="well page searchContainer clearfix">
+                <form class="" id="formSearch">
+                    <div class="form-group" id="searchWrap">
+                        <input type="text" class="form-control col-md-8" placeholder="Search (by tags)" id="searchInput" ng-model="searchString" list="tagsPopulateList">
+                    </div>
+                </form>
+                <div class="searchWrap">
+                    <i class="material-icons" id="closeSearchBtn" ng-click="clearSearch()">clear</i></div>
+            </div>
+        </div>
+    </div>
+    <!--Top statistics and sort bar-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="sortBar"><span class="btn-group btn-group-justified btn-group-raised selSort opt" id="sortRating" ng-click="SortByThis('rating')"><i class="material-icons">arrow_upward</i>Rating</span><span class="btn-group btn-group-justified btn-group-raised opt" id="sortLikes" ng-click="SortByThis('likes')"><i class="material-icons">arrow_upward</i>Likes</span></div>
+                <div class="statisticsBar"><span><i class="material-icons">thumb_up</i> {{totalLikes}} Likes</span></div>
+            </div>
+        </div>
+    </div>
+    <!--    Product list goes here  -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-lg-6 prod" ng-repeat="prodInfo in ProductList |filter:IsThisInSearch | orderBy:checkToOrder">
+                <div class="panel" style="height: 95%;">
+                    <div class="prodImg"><img ng-src={{prodInfo.image}} /></div>
+                    <div class="infoSection">
+                        <div class="row1">{{prodInfo.name}}</div>
+                        <div class="row2">Purchased By: {{prodInfo.purchased_by}}</div>
+                        <div class="row3">
+                            <span><img src="img/cash-multiple.png"/>&#8377;{{prodInfo.price}}</span>
+                            <span>{{prodInfo.rating}}</span>
+                            <span star-rating rating-value="prodInfo.rating" max="5"></span>
+                        </div>
+                        <div class="row4"><img src="img/tag-multiple.png"><span ng-repeat="tag in prodInfo.tags">{{tag}} </span></div>
+                        <div class="row5"><a class="btn btn-raised btn-warning" href="{{prodInfo.link}}" target="_blank">{{prodInfo.provider}} >></a></div>
+                        <div class="badgeLike btn btn-raised"><i class="material-icons"> thumb_up</i>{{prodInfo.likes}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <datalist id="tagsPopulateList">
+    </datalist>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/ripples.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <!--    <script src="main.js"></script>-->
+</body>
+
+</html>

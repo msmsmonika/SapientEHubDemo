@@ -1,0 +1,245 @@
+/*
+COLOR DESCRIPTION
+Nav/Main theme color :
+orange-#F9690E
+dark orange-#D35400
+Icon grey color: #797979;
+Yellow:#F9BF3B
+*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    padding-top: 70px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+.clearfix:before,
+.clearfix:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0
+}
+.clearfix:after {
+    clear: both
+}
+.clearfix {
+    zoom: 1
+}
+
+/*
+.container {
+    width: 100%;
+    max-width: 100%;
+}
+*/
+
+.navbar,
+.navbar.navbar-default {
+    background-color: #F9690E;
+    color: rgba(255, 255, 255, .84);
+}
+.subHeader {
+    background: #D35400;
+    width: 100%;
+    padding-left: 1%;
+    margin: auto;
+}
+.myHeader {
+    width: 98%;
+    margin: auto;
+    float: none;
+    display: flex;
+    align-items: center;
+}
+.navbar .navbar-brand {
+    padding-left: 0;
+    font-size: 2em;
+    width: 90%;
+}
+.navbar-brand>span {
+    color: #F9BF3B;
+    font-weight: bold;
+}
+.navbar-brand sup {
+    font-size: 0.4em;
+    vertical-align: super;
+}
+#searchBar {
+    display: none;
+}
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+#searchIcon {
+    cursor: pointer;
+    float: right;
+    font-size: 2em;
+    padding: 1%;
+    color: #F9BF3B;
+    width: 10%;
+    text-align: center;
+    font-weight: bold;
+}
+#formSearch {
+    width: 88%;
+    float: left;
+}
+.searchWrap {
+    width: 12%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.searchWrap>i {
+    font-size: 3em;
+    cursor: pointer;
+    color: #797979;
+}
+.form-group.is-focused .form-control {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F9690E), to(#F9690E)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+    background-image: -webkit-linear-gradient(#F9690E, #F9690E), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: -o-linear-gradient(#F9690E, #F9690E), -o-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: linear-gradient(#F9690E, #F9690E), linear-gradient(#D2D2D2, #D2D2D2);
+}
+.sortBar {
+    width: 50%;
+    float: left;
+}
+.statisticsBar {
+    width: 50%;
+    float: right;
+}
+.sortBar>span {
+    width: auto;
+    font-size: 1.6em;
+    display: inline-block;
+    margin: 1%;
+    padding: 1%;
+    padding-bottom: 0;
+}
+.sortBar>.opt {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    float: left;
+}
+span.selSort {
+    border-bottom: 3px #F9690E solid;
+    color: #F9690E;
+}
+.statisticsBar>span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    float: right;
+    margin: 1%;
+    padding: 1%;
+    font-size: 1.6em;
+}
+.prod {
+    height: 185px;
+    overflow: hidden;
+    margin-bottom: 13px;
+}
+.prodImg {
+    width: 30%;
+    float: left;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.prodImg img {
+    height: 100%;
+    max-height: 100%;
+    width: auto;
+}
+.infoSection {
+    float: right;
+    width: 70%;
+    height: 100%;
+}
+.row1 {
+    color: #F9BF3B;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.row2 {
+    color: #797979;
+    font-size: 1.1em;
+    /* font-weight: bold; */
+}
+.row3 {
+    display: inline-block;
+    width: 100%;
+}
+.row3>span {
+    float: left;
+}
+.row3>span:first-child {
+    border-right: 2px #797979 solid;
+    width: 30%;
+    margin-right: 10px;
+}
+.row3>span:first-child > img,
+.row4>img {
+    padding-right: 5px;
+}
+ul.rating {
+    list-style: none;
+    padding-left: 10px;
+}
+ul.rating li {
+    display: inline;
+    color: #797979;
+}
+li.filled {
+    color: #F9BF3B !important;
+}
+.badgeLike {
+    position: absolute;
+    right: 16px;
+    bottom: 10px;
+    padding: 10px;
+    margin: 0;
+}
+.badgeLike>i {
+    padding-right: 2px;
+}
+@media only screen and (max-width: 500px) {
+    #formSearch {
+        width: 90%;
+    }
+    .searchWrap {
+        width: 20%;
+    }
+    .sortBar>span {
+        font-size: 1em;
+    }
+    .sortBar {
+        width: 60%;
+        float: left;
+    }
+    .statisticsBar {
+        width: 40%;
+        float: right;
+    }
+    .statisticsBar>span {
+        font-size: 1em;
+    }
+}
