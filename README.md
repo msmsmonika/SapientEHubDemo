@@ -1,5 +1,7 @@
 # SapientEHubDemo
 App to list al the products information and search feature by using Rest API call.
+The api called is:
+https://hackerearth.0x10.info/api/nitro_deals?type=json&query=list_deals
 
 The application works like following:
 
@@ -8,3 +10,6 @@ The application works like following:
 3. We can sort as per Rating or Likes both by clicking on top tabs.
 4. If we click on top right search button, it will slide down the search bar where one can search using tags. Tags will be auto completely populate as you type.
 5. If one clicks on any link of the product, it will open in a new window the respective link.
+
+Note:
+This page will require internet connection to load the fonts and material icons.
