@@ -122,11 +122,10 @@ body {
 }
 .sortBar>span {
     width: auto;
-    font-size: 1.6em;
+    font-size: 1.4em;
     display: inline-block;
     margin: 1%;
-    padding: 1%;
-    padding-bottom: 0;
+    padding: 2%;
 }
 .sortBar>.opt {
     cursor: pointer;
